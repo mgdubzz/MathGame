@@ -1,0 +1,125 @@
+import java.util.*;
+
+public class MathGameForGirls
+{
+	public static void main( String[] args )
+	{
+		
+		Scanner keyboard = new Scanner( System.in );
+		System.out.println( "Hello! Who is playing?" );
+		String child = keyboard.nextLine(); // Will be used to decide which one of the girls is playing.
+		String G = "G";			
+			if ( child.startsWith(G) )
+			{
+				System.out.println( "Hello Gianna! Are you ready to play?" );				
+			}
+			else 
+			{			
+				System.out.println( "Hello Ryley! Are you ready to play?" );
+			}
+		String wanttoplay = keyboard.nextLine();
+		String Y = "y";
+			if ( wanttoplay.startsWith(Y) )			
+			{
+				System.out.println( "Great let's get started!");
+			}
+			else 
+			{
+				System.out.printf( "Goodbye! Daddy Loves You %s!", child);
+				System.out.println();
+			}   
+		
+		for( int i = 0; i < 10; i++)//A loop of 10 rounds that will first generate 2 rand #'s and then generate an addition problem
+		{
+			/*Random rn1 = new Random();
+				for(int j =0; j < 1; j++)
+				{
+					int answer1 = rn1.nextInt(10) + 1;
+				}
+			Random rn2 = new Random();
+				for(int k =0; k < 1; k++)
+				{
+    					int answer2 = rn2.nextInt(10) + 1;
+				}
+			System.out.print( rn1 + " + " + rn2 + " = ");
+			*/
+			int a1, a2;
+			a1 = (int) (10 * Math.random());
+			a2 = (int) (10 * Math.random());
+			System.out.print( a1 + " + " + a2 + " = ");
+			int answer3 = keyboard.nextInt();
+				if ( answer3 == (a1 + a2)) 
+				{
+					System.out.println( "Great job Honey!" );
+				}
+				else if ( answer3 - (a1 + a2) == 1 )
+				{
+					System.out.println( "That was VERY close! Try again!!" );
+					for ( int j = 0; j < 1; j++ )
+					{
+						System.out.print( a1 + " + " + a2 + " = ");
+						int answer4 = keyboard.nextInt();
+							answer3 = answer4;
+							if ( answer4 != a1 + a2 )
+							{
+								System.out.println( "Use your fingers honey! You got this!!!");
+								for ( int k = 0; k < 1; k++ )
+								{
+									System.out.print( a1 + " + " + a2 + " = ");
+									int answer5 = keyboard.nextInt();
+									answer3 = answer5;
+										if ( answer5 != a1 + a2 )
+										{
+											System.out.println( "Let's try another one sweetheart! :)");
+											break;
+										}
+										else
+										{
+											break;
+										}
+								}
+							}		
+							else
+							{
+								break;
+							}
+			
+					}		
+				}
+				else
+				{
+					System.out.println( "Try again boo, try using your fingers!");
+					for ( int l = 0; l < 1; l++ )
+					{
+						System.out.print( a1 + " + " + a2 + " = ");
+						int answer6 = keyboard.nextInt();
+							answer3 = answer6;
+							if ( answer6 != a1 + a2 )
+							{
+								System.out.println( "Use your fingers honey! You got this!!!");
+								for ( int m = 0; m < 1; m++ )
+								{
+									System.out.print( a1 + " + " + a2 + " = ");
+									int answer7 = keyboard.nextInt();
+									answer3 = answer7;
+										if ( answer7 != a1 + a2 )
+										{
+											System.out.println( "Let's try another one sweetheart! :)");
+											break;
+										}
+										else
+										{
+											break;
+										}
+								}
+							}		
+							else
+							{
+								break;
+							}
+			
+					}
+				}		
+		}
+	}
+}
